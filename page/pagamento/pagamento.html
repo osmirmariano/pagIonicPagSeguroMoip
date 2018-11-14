@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Forma de pagamento</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3 class="tituloPagamento">Formas de pagamentos cadastradas</h3>
+  <ion-list>
+    <ion-item *ngFor="let item of cartoes; let i = index">
+      <ion-row>
+        <ion-col style="max-width: 15%;">
+          <img [src]="item.dadosCartao.imagem"/>
+        </ion-col>
+        <ion-col style="max-width: 70%;" [hidden]="i != 0">
+          <p class="cartao"> {{ item.dadosCartao.numero }}</p>
+        </ion-col>
+
+        <ion-col style="max-width: 70%;" [hidden]="i == 0">
+          <p class="cartao">°°°° °°°° °°°° {{ item.dadosCartao.numero.substring(12,16) }}</p>
+        </ion-col>
+
+        <ion-col style="max-width: 15%;" [hidden]="i == 0">
+          <ion-icon name="trash" class="btn-excluir" (click)="removeCartao(item)"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
+
+  <ion-row (click)="cartaoAdd()">
+    <ion-col style="max-width: 10%; font-size: 1.6em;">
+      <ion-icon ios="ios-add" md="md-add"></ion-icon>
+    </ion-col>
+
+    <ion-col style="max-width: 90%; font-size: 1.6em;">
+      Adicionar cartão
+    </ion-col>
+  </ion-row>
+
+  <hr class="linha"/>
+  <button ion-button block (click)="codigoAdd()">
+    Adicionar código promocional
+  </button>
+
+</ion-content>

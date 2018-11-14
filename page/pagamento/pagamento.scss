@@ -1,0 +1,58 @@
+page-pagamento {
+  .tituloPagamento{
+    font-size: 1.2em;
+    text-align: left;
+    margin-left: 5%;
+    color: gray;
+  }
+
+  .item-icon-label{
+    margin-left: 5%;
+    top: 5%;
+    font-size: 1.2em;
+  }
+
+  .dinheiro{
+    color: #1c313a;
+    font-size: 2.7em;
+  }
+
+  .dinheiroTex{
+    color: #1c313a;
+    font-size: 1.2em;
+    margin-left: 15%;
+    margin-top: -10%;
+    position: relative;
+    display: block;
+  }
+
+  .cartao{
+    font-size: 1.1em;
+    font-weight: bolder;
+    margin-left: 5%;
+  }
+
+  .btn-excluir{
+    font-size: 1.1em;
+    text-align: left;
+    float: right;
+    position: relative;
+    display: block;
+    color: #1c313a;
+  }
+
+  .linha{
+    background-color: #1c313a;
+    margin-bottom: 8%;
+    margin-top: 4%;
+  }
+
+  .button-inner{
+    font-size: 1.2em;
+    font-weight: 800;
+  }
+
+  .col{
+    color: #1976D2;
+  }
+}

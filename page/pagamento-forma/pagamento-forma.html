@@ -1,0 +1,25 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Forma de pagamento</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button large block color="appPAzul" (click)="cartaoAdd(2)" id="credito">
+    <ion-icon ios="ios-card" md="md-card" class="btn-pagamento"></ion-icon>
+    Cartão de Crédito
+  </button>
+  <br/>
+  <button ion-button left large block color="appPLara" (click)="cartaoAdd(1)" id="debito" [disabled]="false">
+    <ion-icon ios="ios-card" md="md-card" class="btn-pagamento"></ion-icon>
+    Cartão de Débito
+  </button>
+
+
+
+  <p class="texto-pagamento">
+    Aceitamos os principais cartões de débito emitidos por Banco do Brasil, Bradesco, Itau e Banrisul
+  </p>
+</ion-content>

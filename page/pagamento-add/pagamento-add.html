@@ -1,0 +1,154 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Pagamento com cartão</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="cartaoForm" (ngSubmit)="salvar()" [hidden]="numeroAtivo === 1">
+    <ion-item class="inputEntradas">
+      <ion-label color="appPAzul" stacked>Número Cartão</ion-label>
+      <ion-input
+        #numero
+        formControlName="numero"
+        type="text"
+        maxlength="16"
+        [class.invalid]="!cartaoForm.controls.numero.valid && cartaoForm.controls.numero.dirty"
+        name="numero"
+        placeholder="Ex: 4111111111111111"
+        [(ngModel)]="model.numero">
+      </ion-input>
+    </ion-item>
+    <p class="mensagemErro" *ngIf="!cartaoForm.controls.numero.valid  && cartaoForm.controls.numero.dirty">
+      Total de números que devem serem fornecidos são 16 e só são permitidos números.
+    </p>
+
+    <ion-item>
+      <ion-label color="appPAzul" stacked>Mês</ion-label>
+      <ion-input
+        #mes
+        formControlName="mes"
+        type="text"
+        maxlength="2"
+        name="mes"
+        placeholder="Ex: 12"
+        [(ngModel)]="model.mes">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="appPAzul" stacked>Ano</ion-label>
+      <ion-input
+        #ano
+        formControlName="ano"
+        type="text"
+        maxlength="4"
+        name="ano"
+        placeholder="Ex: 2017"
+        [(ngModel)]="model.ano">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="appPAzul" stacked>Código segurança</ion-label>
+      <ion-input
+        #seguranca
+        formControlName="seguranca"
+        type="text"
+        maxlength="3"
+        [class.invalid]="!cartaoForm.controls.seguranca.valid && cartaoForm.controls.seguranca.dirty"
+        name="seguranca"
+        placeholder="Ex: 123"
+        [(ngModel)]="model.seguranca">
+      </ion-input>
+    </ion-item>
+
+    <p class="mensagemErro" *ngIf="!cartaoForm.controls.seguranca.valid  && cartaoForm.controls.seguranca.dirty">
+      Total de números que devem serem fornecidos são 16 e só são permitidos números.
+    </p>
+
+    <br/>
+    <br/>
+    <button ion-button type="submit" block large>Salvar</button>
+  </form>
+
+  <div style="width: 100%;" [hidden]="numeroAtivo === 2">
+    <ion-label class="selecione">Selecione o seu Banco</ion-label>
+    <ion-item>
+      <ion-label>Banco</ion-label>
+      <ion-select  [(ngModel)]="banco" (ionChange)="selecionaBanco();">
+        <ion-option value="BANCO_BRASIL">Banco do Brasil</ion-option>
+        <ion-option value="BANRISUL">Banrisul</ion-option>
+        <ion-option value="BRASDESCO">Brasdesco</ion-option>
+        <ion-option value="ITAU">Itau</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <form [formGroup]="cartaoForm" (ngSubmit)="salvar()" [hidden]="numeroAtivo === 2">
+    <ion-item class="inputEntradas">
+      <ion-label color="appPAzul" stacked>Número Cartão</ion-label>
+      <ion-input
+        #numero
+        formControlName="numero"
+        type="text"
+        maxlength="16"
+        [class.invalid]="!cartaoForm.controls.numero.valid && cartaoForm.controls.numero.dirty"
+        name="numero"
+        placeholder="Ex: 4111111111111111"
+        [(ngModel)]="model.numero">
+      </ion-input>
+    </ion-item>
+    <p class="mensagemErro" *ngIf="!cartaoForm.controls.numero.valid  && cartaoForm.controls.numero.dirty">
+      Total de números que devem serem fornecidos são 16 e só são permitidos números.
+    </p>
+
+    <ion-item>
+      <ion-label color="appPAzul" stacked>Mês</ion-label>
+      <ion-input
+        #mes
+        formControlName="mes"
+        type="text"
+        maxlength="2"
+        name="mes"
+        placeholder="Ex: 12"
+        [(ngModel)]="model.mes">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="appPAzul" stacked>Ano</ion-label>
+      <ion-input
+        #ano
+        formControlName="ano"
+        type="text"
+        maxlength="4"
+        name="ano"
+        placeholder="Ex: 2017"
+        [(ngModel)]="model.ano">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="appPAzul" stacked>Código segurança</ion-label>
+      <ion-input
+        #seguranca
+        formControlName="seguranca"
+        type="text"
+        maxlength="3"
+        [class.invalid]="!cartaoForm.controls.seguranca.valid && cartaoForm.controls.seguranca.dirty"
+        name="seguranca"
+        placeholder="Ex: 123"
+        [(ngModel)]="model.seguranca">
+      </ion-input>
+    </ion-item>
+
+
+    <p class="mensagemErro" *ngIf="!cartaoForm.controls.seguranca.valid  && cartaoForm.controls.seguranca.dirty">
+      Total de números que devem serem fornecidos são 16 e só são permitidos números.
+    </p>
+
+    <br/>
+    <br/>
+    <button ion-button type="submit" block large>Salvar</button>
+  </form>
+</ion-content>
